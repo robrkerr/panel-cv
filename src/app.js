@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import Panel from './Panel'
 import styles from './app.css'
 
 export default class App extends Component {
 
   render() {
-    const { tabs } = this.props.data;
+    const { panels, updatePanels } = this.props;
     return (
       <div className={styles.main}>
         {
-          tabs.map((tab,i) => (
-            <div key={i}>{tab.title}</div>
+          panels.map(panel => (
+            <Panel key={panel.title} data={panel} updatePanels={updatePanels} />
           ))
         }
       </div>

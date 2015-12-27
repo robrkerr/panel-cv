@@ -1,8 +1,11 @@
 {
-  "tabs": [
+  "panels": [
     {
-      "title": "Hello",
-      "content": "This is the content"
+      "title": "Title 1",
+      "content": "This is some content."
+    }, {
+      "title": "Title 2",
+      "content": "This is some more content."
     }
   ]
 }

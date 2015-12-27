@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  height: 4.6rem;
+  width: 100%;
+}
+
+.tab {
+  position: absolute;
+  height: 4.6rem;
+  width: 1rem;
+}
+
+.tab0 {
+  composes: tab;
+  background: skyblue;
+}
+
+.tab1 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.title {
+  position: absolute;
+  left: 1rem;
+  z-index: 1;
+  background: hsl(0,0%,90%);
+  width: calc(100% - 5rem);
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  height: 2.2rem;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  z-index: 0;
+  background: hsl(0,0%,90%);
+  width: calc(100% - 3rem);
+  padding: 0.6rem 1rem; 
+}
