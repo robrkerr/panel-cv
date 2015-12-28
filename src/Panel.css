@@ -1,13 +1,19 @@
 .container {
-  position: relative;
+  position: absolute;
+  transition: top 0.4s, height 0.4s;
   height: 4.6rem;
   width: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .tab {
   position: absolute;
   height: 4.6rem;
   width: 1rem;
+  transition: width 0.4s;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .tab0 {
@@ -20,23 +26,77 @@
   background: olivedrab;
 }
 
+.tab2 {
+  composes: tab;
+  background: purple;
+}
+
+.tab3 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab4 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab5 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab6 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab7 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab8 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab9 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab10 {
+  composes: tab;
+  background: olivedrab;
+}
+
+.tab11 {
+  composes: tab;
+  background: olivedrab;
+}
+
 .title {
   position: absolute;
-  left: 1rem;
+  left: 2rem;
   z-index: 1;
   background: hsl(0,0%,90%);
   width: calc(100% - 5rem);
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 1.5rem;
   font-size: 2rem;
   height: 2.2rem;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .content {
   position: absolute;
   bottom: 0;
-  left: 1rem;
+  left: 2rem;
   z-index: 0;
   background: hsl(0,0%,90%);
-  width: calc(100% - 3rem);
+  width: calc(100% - 4rem);
   padding: 0.6rem 1rem; 
+  height: 17.2rem;
+  pointer-events: auto;
 }

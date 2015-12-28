@@ -4,7 +4,7 @@ import App from './app'
 import fetch from './fetch'
 
 fetch.get("/data.json").then(function(data) {
-  const origPanels = data.panels.map((d,i) => ({...d, index: i}));
+  const origPanels = data.panels.map((d,i) => ({...d, key: i, order: i}));
 
   function render(panels,firstOpen) {
     ReactDOM.render(
@@ -17,7 +17,10 @@ fetch.get("/data.json").then(function(data) {
     if (index === undefined) {
       render(origPanels,false);
     } else {
-      const panels = [origPanels[index], ...origPanels.filter((p,i) => i !== index)];
+      const panels = origPanels.map((p,i) => 
+        (i === index) ? {...p, order: 0} : 
+        ((i < index) ? {...p, order: p.order + 1} : p)
+      );
       render(panels,true);
     }
   }
