@@ -4,17 +4,23 @@ import App from './app'
 import fetch from './fetch'
 
 fetch.get("/data.json").then(function(data) {
-  const panels = data.panels.map((d,i) => ({...d, index: i}));
-  render(panels);
+  const origPanels = data.panels.map((d,i) => ({...d, index: i}));
+
+  function render(panels,firstOpen) {
+    ReactDOM.render(
+      <App panels={panels} firstOpen={firstOpen} selectPanel={selectPanel} />,
+      document.getElementById('app')
+    )
+  }
+
+  function selectPanel(index) {
+    if (index === undefined) {
+      render(origPanels,false);
+    } else {
+      const panels = [origPanels[index], ...origPanels.filter((p,i) => i !== index)];
+      render(panels,true);
+    }
+  }
+
+  render(origPanels,false);
 });
-
-function render(panels) {
-  ReactDOM.render(
-    <App panels={panels} updatePanels={updatePanels} />,
-    document.getElementById('app')
-  )
-}
-
-function updatePanels(panels) {
-  render(panels);
-}

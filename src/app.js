@@ -5,12 +5,12 @@ import styles from './app.css'
 export default class App extends Component {
 
   render() {
-    const { panels, updatePanels } = this.props;
+    const { panels, selectPanel } = this.props;
     return (
       <div className={styles.main}>
         {
           panels.map(panel => (
-            <Panel key={panel.title} data={panel} updatePanels={updatePanels} />
+            <Panel key={panel.title} data={panel} selectPanel={selectPanel} />
           ))
         }
       </div>

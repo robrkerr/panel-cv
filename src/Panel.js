@@ -9,8 +9,9 @@ export default class Panel extends Component {
   }
 
   handleClick() {
-    const { updatePanels } = this.props;
-    updatePanels([]);
+    const { selectPanel } = this.props;
+    const { index } = this.props.data;
+    selectPanel(index);
   }
 
   render() {
