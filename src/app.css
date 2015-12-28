@@ -4,7 +4,7 @@
 }
 
 body {
-  background: hsl(0,0%,97%);
+  background: hsl(0,0%,99%);
   font-size: 16px;
 }
 
@@ -14,5 +14,5 @@ body {
   max-width: 600px;
   margin: 0 auto;
   height: 100%;
-  background: hsl(0,0%,90%);
+  background: hsl(0,0%,95%);
 }

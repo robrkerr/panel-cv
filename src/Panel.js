@@ -24,7 +24,8 @@ export default class Panel extends Component {
     const containerStyle = {
       top: order*4.6 + 'rem',
       height: ((firstOpen && (order === 0)) ? 5*4.6 : 4.6) + 'rem',
-      zIndex: (order === 0) ? 1 : 0
+      zIndex: (order === 0) ? 1 : 0,
+      transition: 'top 0.4s' + ((firstOpen && (order === 0)) ? ', height 0.8s' : '')
     };
     const tabStyle = {
       width: (firstOpen ? 2 : 1) + 'rem'

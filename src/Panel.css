@@ -1,6 +1,5 @@
 .container {
   position: absolute;
-  transition: top 0.4s, height 0.4s;
   height: 4.6rem;
   width: 100%;
   overflow: hidden;
@@ -18,69 +17,69 @@
 
 .tab0 {
   composes: tab;
-  background: skyblue;
+  background: cornflowerblue;
 }
 
 .tab1 {
   composes: tab;
-  background: olivedrab;
+  background: blanchedalmond;
 }
 
 .tab2 {
   composes: tab;
-  background: purple;
+  background: seagreen;
 }
 
 .tab3 {
   composes: tab;
-  background: olivedrab;
+  background: lavender;
 }
 
 .tab4 {
   composes: tab;
-  background: olivedrab;
+  background: plum;
 }
 
 .tab5 {
   composes: tab;
-  background: olivedrab;
+  background: peachpuff;
 }
 
 .tab6 {
   composes: tab;
-  background: olivedrab;
+  background: mistyrose;
 }
 
 .tab7 {
   composes: tab;
-  background: olivedrab;
+  background: lightyellow;
 }
 
 .tab8 {
   composes: tab;
-  background: olivedrab;
+  background: honeydew;
 }
 
 .tab9 {
   composes: tab;
-  background: olivedrab;
+  background: navajowhite;
 }
 
 .tab10 {
   composes: tab;
-  background: olivedrab;
+  background: lightsalmon;
 }
 
 .tab11 {
   composes: tab;
-  background: olivedrab;
+  background: wheat;
 }
 
 .title {
   position: absolute;
   left: 2rem;
   z-index: 1;
-  background: hsl(0,0%,90%);
+  background: hsl(0,0%,95%);
   width: calc(100% - 5rem);
   padding: 1.2rem 1.5rem;
   font-size: 2rem;
@@ -94,7 +93,7 @@
   bottom: 0;
   left: 2rem;
   z-index: 0;
-  background: hsl(0,0%,90%);
+  background: hsl(0,0%,85%);
   width: calc(100% - 4rem);
   padding: 0.6rem 1rem; 
   height: 17.2rem;
