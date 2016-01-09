@@ -2,14 +2,10 @@ function status(response) {
   if (response.status >= 200 && response.status < 300) { return response; }
   throw new Error(response.statusText);
 }
- 
-function json(response) {
-  return response.json()
-}
 
-function fetchBasic(url, options, noResponse) {
+function fetchBasic(url, options, noResponse, nonJSON) {
   return fetch(url, options).then(status).then(function(response) { 
-    return noResponse ? {} : json(response); 
+    return noResponse ? {} : (nonJSON ? response.text() : response.json());
   }).catch(function(err) {
     return false;
     // console.log(err);
@@ -39,6 +35,10 @@ var Fetch = {
 
   get: function(url) {
     return fetchBasic(url);
+  },
+
+  getFile: function(url) {
+    return fetchBasic(url,undefined,undefined,true);
   },
 
   put: function(url, data) {

@@ -1,20 +1,20 @@
 {
   "panels": [
     {
-      "title": "Title 1",
-      "content": "This is some content."
+      "title": "My name is Robert Kerr",
+      "content": "panel1.md"
     }, {
-      "title": "Title 2",
-      "content": "This is some more content."
+      "title": "I have a background in scientific programming",
+      "content": "background.md"
     }, {
-      "title": "Title 3",
-      "content": "This is some more content."
+      "title": "I enjoy and excel at learning new skills",
+      "content": "panel3.md"
     }, {
-      "title": "Title 4",
-      "content": "This is some more content."
+      "title": "I am interested in finding better ways to communicate ideas",
+      "content": "panel4.md"
     }, {
-      "title": "Title 5",
-      "content": "This is some more content."
+      "title": "I have people who can vouch for me",
+      "content": "panel5.md"
     }
   ]
 }
