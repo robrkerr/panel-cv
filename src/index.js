@@ -14,7 +14,6 @@ fetch.get("/data.json").then(data => {
       ({...p, content: content || "", key: i, order: i, height: 0, top: 0})
     )
   )).then(origPanels => {
-    console.log(origPanels);
 
     function render(panels,firstOpen) {
       ReactDOM.render(
@@ -31,25 +30,30 @@ fetch.get("/data.json").then(data => {
           (i === index) ? {...p, order: 0} : 
           ((i < index) ? {...p, order: p.order + 1} : p)
         );
-        updatePositions(panels);
+        updatePositions(panels, true);
         render(panels,true);
       }
     }
 
-    function heightSet(index, height) {
-      console.log(height);
-      origPanels[index].height = height;
-      updatePositions(origPanels);
-      console.log(origPanels);
+    function heightSet(index, titleHeight, altHeight) {
+      origPanels[index].titleHeight = titleHeight;
+      origPanels[index].altHeight = altHeight;
+      updatePositions(origPanels, false);
       render(origPanels,false);
     }
 
-    function updatePositions(panels) {
+    function updatePositions(panels, firstOpen) {
       var position = 0;
       for (var i = 0; i < panels.length; i++) {
         var panel = panels.filter(p => p.order == i)[0];
         panel.top = position;
-        position += panel.height;
+        if ((i === 0) && firstOpen) {
+          panel.height = panel.altHeight;
+          position += panel.altHeight;
+        } else {
+          panel.height = panel.titleHeight;
+          position += panel.titleHeight;
+        }
       }
     }
 

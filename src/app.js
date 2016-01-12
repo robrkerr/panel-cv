@@ -8,6 +8,7 @@ export default class App extends Component {
   render() {
     const { panels, selectPanel, heightSet, firstOpen } = this.props;
     const totalHeight = panels.reduce((sum,p) => sum + p.height, 0);
+    console.log(totalHeight);
     return (
       <div className={styles.main}>
         <ReactTransitionGroup component="div">

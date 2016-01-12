@@ -2,19 +2,32 @@
   "panels": [
     {
       "title": "My name is Robert Kerr",
-      "content": "panel1.md"
+      "alternative": "Contact details",
+      "content": "basic.md"
     }, {
-      "title": "I have a background in scientific programming",
-      "content": "background.md"
+      "title": "I am a computational neuroscientist",
+      "alternative": "Experience",
+      "content": "neuroscientist.md"
+    }, {
+      "title": "And more recently a web developer",
+      "alternative": "ummm",
+      "content": "developer.md"
+    }, {
+      "title": "I've spoken at conferences",
+      "alternative": "Talks",
+      "content": "presentations.md"
     }, {
       "title": "I enjoy and excel at learning new skills",
-      "content": "panel3.md"
+      "alternative": "New skills",
+      "content": "skills.md"
     }, {
       "title": "I am interested in finding better ways to communicate ideas",
-      "content": "panel4.md"
+      "alternative": "Data visualisation",
+      "content": "communicate.md"
     }, {
       "title": "I have people who can vouch for me",
-      "content": "panel5.md"
+      "alternative": "References",
+      "content": "references.md"
     }
   ]
 }

@@ -42,13 +42,16 @@ export default class Panel extends Component {
   componentWillEnter(done) {
     const { key } = this.props.data;
     const children = ReactDOM.findDOMNode(this).children;
-    const title = children[children.length-1];
-    const computedStyle = window.getComputedStyle(title, null);
-    this.props.heightSet(key, getHeight(computedStyle))
+    const title = children[2];
+    const titleComputed = window.getComputedStyle(title, null);
+    const alternative = children[3].children[0];
+    const altComputed = window.getComputedStyle(alternative, null);
+    this.props.heightSet(key, getHeight(titleComputed), getHeight(altComputed));
   } 
 
   render() {
     const { title, key, order, top, height } = this.props.data;
+    const alternative = this.props.data.alternative || title;
     const { firstOpen, totalHeight } = this.props;
     const containerStyle = {
       top: top + 'px',
@@ -65,14 +68,20 @@ export default class Panel extends Component {
       height: height + 'px'
     };
     const titleStyle = {
-      pointerEvents: firstOpen ? 'auto' : 'none'
-    }
+      pointerEvents: firstOpen ? 'auto' : 'none',
+      height: firstOpen ? ('calc(' + height + 'px - 2.4rem)') : undefined
+    };
+    const contentStyle = {
+      height: 'calc(' + (totalHeight - height) + 'px - 1.2rem)'
+    };
     return (
       <div className={styles.container} style={containerStyle}>
-        <div className={styles.content} dangerouslySetInnerHTML={this.rawContentMarkup()} />
+        <div className={styles.content} style={contentStyle} dangerouslySetInnerHTML={this.rawContentMarkup()} />
         <div className={styles.titleBacking} style={backingStyle} onClick={firstOpen ? undefined : this.handleClick}></div>
-        <div className={styles['tab' + key]} style={tabStyle} onClick={this.handleClick}></div>
         <div className={styles.title} style={titleStyle}>{title}</div>
+        <div className={styles['tab' + key]} style={tabStyle} onClick={this.handleClick}>
+          <div className={styles.tabInner}>{alternative}</div>
+        </div>
       </div>
     );
   }
